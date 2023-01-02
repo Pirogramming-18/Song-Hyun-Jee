@@ -37,7 +37,7 @@
                 </li>
             </ul>
             <form class="d-flex" role="search">
-                <button class="btn btn-outline-success" type="submit">About</button>
+                <button class="btn btn-outline-success" type="submit " data-bs-toggle="modal" data-bs-target="#exampleModal2">About</button>
             </form>
         </div>
     </div>
@@ -115,22 +115,22 @@
 <header id="Gallery" class="py-4 justify-content-center align-items-center vh-100 bg-secondary">
     <div class="container-fluid ">
         <div class="row mx-5 text-center">
-            <div class="col-md-4 col-sm-12 px-5 my-3">
+            <div class="col-md-4 col-xs-12 col-sm-6 px-5 my-3">
                 <img src="./images/snow mountain.jpg" alt="snow mountain" width="100%" height="100%">
             </div>
-            <div class="col-md-4 col-sm-12 px-5 my-3">
+            <div class="col-md-4 col-xs-12 col-sm-6 px-5 my-3">
                 <img src="./images/factory.jpg" alt="factoy" width="100%" height="100%">
             </div>
-            <div class="col-md-4 col-sm-12 px-5 my-3">
+            <div class="col-md-4 col-xs-12 col-sm-6 px-5 my-3">
                 <img src="./images/complex road.jpg" alt="complex road" width="100%" height="100%">
             </div>
-            <div class="col-md-4 col-sm-12 px-5 my-3">
+            <div class="col-md-4 col-xs-12 col-sm-6 px-5 my-3">
                 <img src="./images/deer.jpg" alt="deer" width="100%" height="100%">
             </div>
-            <div class="col-md-4 col-sm-12 px-5 my-3">
+            <div class="col-md-4 col-xs-12 col-sm-6 px-5 my-3">
                 <img src="./images/leaf.jpg" alt="leaf" width="100%" height="100%">
             </div>
-            <div class="col-md-4 col-sm-12 px-5 my-3">
+            <div class="col-md-4 col-xs-12 col-sm-6 px-5 my-3">
                 <img src="./images/foggy mountain.jpg" alt="foggy mountain" width="100%" height="100%">
             </div>
         </div>
@@ -163,7 +163,7 @@
                 </div>
             </div>
             <div class="d-grid gap-2 col-3 mx-auto text-center">
-                <button type="button" class="btn btn-primary">Send</button>        
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Send</button>        
             </div>           
         </div>
     </div>
@@ -210,11 +210,52 @@
         <div class="col-md-4 col-sm-12 px-5">
             <h5 class="text-info ">Stay Posted</h5>
             <input class="form-control my-2 my-lg-3" type="text" placeholder="Tell your email" aria-label="Tell your email">
-            <button class="btn btn-primary" type="submit">Subscribe for updates</button>        
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">Subscribe for updates</button>        
         </div>
     </div>
 </footer>
 <!-- 기본 템플릿 안에 삽입될 내용 End -->
+<!--MODAL-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content text-center modal-dialog-centered">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold " id="exampleModalLabel">Nice-Job!</h5>
+            </div>
+            <div class="modal-body">
+                You clicked the button but it doesn't 
+                <br>acutally go any where
+                <br>
+                <div class="text-secondary">
+                    <br>Learn more at Bootstrap
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabe2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content text-center modal-dialog-centered bg-secondary">
+            <div class="modal-header bg-secondary">
+                <h5 class="modal-title fw-bold text-center" id="exampleModalLabel">피로그래밍 18기</h5>
+            </div>
+            <div class="modal-body bg-secondary">
+                <h3>파이팅!</h3>
+                모두들 아르샤 하느라 수고 많으셨습니다!
+                <br>힘들더라도 계속해서 달려봐요!
+            </div>
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-primary" style="float:right; " >Download</button>
+                    <button type="button" class="btn btn-info"  data-bs-dismiss="modal" style="float:right; ">OK</button>           
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

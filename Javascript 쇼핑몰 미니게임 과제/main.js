@@ -6,14 +6,15 @@ function loadItems(){
         .then(json=>json.items);
 }
 
-
+//Update the list with the given data items
 function displayItems(items){
     const container = document.querySelector('.items');
     const html = items.map(item=>createHTMLString(item)).join('');
-    console.log(html);
     container.innerHTML = items.map(item=>createHTMLString(item)).join('');
 
 }
+
+// Create HTML list item from the given data item 
 function createHTMLString(item){
     return `
     <li class="item">
@@ -23,12 +24,32 @@ function createHTMLString(item){
     `;
 }
 
+function onButtonClick(event,items){
+    const dataset=event.target.dataset;
+    const key = dataset.key;
+    const value = dataset.value;
+
+    if(key==null || value ==null){
+        return;
+    }
+    displayItems(items.filter(item=>item[key] ===value));
+
+}
+
+
+function setEventListeners(items){
+    const logo = document.querySelector('.logo');
+    const buttons = document.querySelector('.buttons');
+    logo.addEventListener('click',()=>displayItems(items));
+    buttons.addEventListener('click',(event) =>onButtonClick(event, items));
+}
+
+
 /// main
 loadItems() 
     .then(items => {
-        console.log(items);
         displayItems(items);
-    //displayItems(items);
-    //setEventListeners(items);
+        setEventListeners(items);
+
     })
     .catch(console.log);

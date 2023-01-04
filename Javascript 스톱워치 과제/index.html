@@ -29,12 +29,12 @@
       <section class="main_container">
         <div class="timer_display">
           <div class="timer_display time">
-            <span id="time">00:00</span>
+            <span id="time" class="">00:00</span>
           </div>
         </div>
         <div class="buttons">
           <button class="colorbtn" id="startbtn">start</button>
-          <button class="colorbtn" id="pausebtn">pause</button>
+          <button class="colorbtn" id="pausebtn">stop</button>
           <button class="colorbtn" id="resetbtn">reset</button>
         </div>
       </section>
@@ -44,7 +44,7 @@
         <table id="tablefill" class="text-center">
           <thead>
             <tr class="recording">
-              <th class="text-record circle"><i class="fa-regular fa-circle"></i></th>
+              <th class="text-record circle"><i class="fa-regular fa-circle" id="circle"></i></th>
               <th class="text-record word">구간기록</th>
               <th class="text-record trashcan"><i class="fa-solid fa-trash"></i></th>
             </tr>

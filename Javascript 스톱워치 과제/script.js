@@ -25,7 +25,7 @@ function addRow() {
     const newCell1 = newRow.insertCell(0);
     const newCell2 = newRow.insertCell(1);
 
-    newCell1.innerHTML = ('<i class="fa-regular fa-circle"></i>');
+    newCell1.innerHTML = ('<i class="fa-regular fa-circle" id="circle"></i>');
     newCell2.innerText = document.getElementById("time").innerText;
 };
 
@@ -42,6 +42,10 @@ document.getElementById("resetbtn").onclick = function () {
     milisecond = 0;
     document.getElementById('time').innerText = "00:00";
 };
+
+document.getElementById("circle").onclick = function () {
+    circle = innerHTML('<i class="fa-regular fa-circle-check"></i>');
+}
 
 
 

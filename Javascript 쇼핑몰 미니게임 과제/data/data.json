@@ -1,0 +1,10 @@
+{
+    "items" : [
+        {"type:" "tshirt", "gender":"femal", "size":"large","color":"pink", "image":"../img/pink_t.png"},
+        {"type:" "tshirt", "gender":"male", "size":"large","color":"pink", "image":"../img/pink_t.png"},
+        {"type:" "pants", "gender":"femal", "size":"large","color":"pink", "image":"../img/pink_t.png"},
+        {"type:" "pants", "gender":"male", "size":"large","color":"pink", "image":"../img/pink_t.png"},
+        {"type:" "skirt", "gender":"femal", "size":"large","color":"pink", "image":"../img/pink_t.png"},
+        {"type:" "skirt", "gender":"male", "size":"large","color":"pink", "image":"../img/pink_t.png"},
+    ]
+}

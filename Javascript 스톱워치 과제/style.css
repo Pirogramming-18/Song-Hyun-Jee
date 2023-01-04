@@ -1,0 +1,105 @@
+:root {
+    /* color */
+    --color-green: #B5BFB6;
+    --color-grey: #E7E7E7;
+
+    /* size */
+    --size-button: 60px;
+    --button-font-size: 18px;
+    --size-border: 25px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_container {
+    background-color: var(--color-green);
+    width: calc(var(--size-button)*5);
+    height: calc(var(--size-button)*3);
+    border-radius: var(--size-border);
+}
+
+.timer_display {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: calc(var(--size-button)*1);
+    background-color: white;
+    border-radius: var(--size-border);
+    text-align: center;
+}
+
+.time {
+    text-align: center;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.colorbtn {
+    align-items: center;
+    display: inline-block;
+    border: none;
+    margin-top: 10px;
+    background-color: #E7E7E7;
+    width: var(--size-button);
+    height: var(--size-button);
+    border-radius: var(--size-border);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.record {
+    margin-top: 30px;
+}
+
+
+
+th:first-child {
+    border-top-left-radius: 20px;
+}
+
+th:last-child {
+    border-top-right-radius: 20px;
+    border-right: none;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+.word {
+    width: calc(var(--size-button)*5);
+    text-align: center;
+}
+
+.trashcan {
+    width: 40px;
+    text-align: center;
+}
+
+.recording {
+    background-color: var(--color-green);
+}

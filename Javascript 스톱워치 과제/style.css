@@ -73,7 +73,11 @@ body {
     margin-top: 30px;
 }
 
+#tablefill {
+    align-items: center;
+    justify-content: center;
 
+}
 
 th:first-child {
     border-top-left-radius: 20px;

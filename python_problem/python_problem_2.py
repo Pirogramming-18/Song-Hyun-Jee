@@ -7,47 +7,56 @@ students_info = [[], [], [], []]
 def Menu1(name, mid_score, final_score):
     # 사전에 학생 정보 저장하는 코딩
     students_info[0].append(name)
-    students_info[1].append(int(mid_score))
-    students_info[2].append(int(final_score))
+    students_info[1].append(mid_score)
+    students_info[2].append(final_score)
 
 # menu 2
 
 
-def Menu2(grad_info):
-    for i in range(len(grad_info[0])):
-        mid_score = grad_info[1][i]
-        final_score = grad_info[2][i]
+def Menu2(grade_info):
+    for i in range(len(grade_info[0])-len(grade_info[3])):
+        mid_score = grade_info[1][i]
+        final_score = grade_info[2][i]
         grade = (mid_score+final_score)/2
         if grade >= 90:
-            students_info[3][i] = 'A'
+            students_info[3].append('A')
         elif grade >= 80:
-            students_info[3][i] = 'B'
-        elif grade >= 80:
-            students_info[3][i] = 'C'
+            students_info[3].append('B')
+        elif grade >= 70:
+            students_info[3].append('C')
         else:
-            students_info[3][i] = 'D'
+            students_info[3].append('D')
     # 학점 부여 하는 코딩
 
 # menu 3
 
 
-def Menu3(students_info):
+def Menu3(print_students):
     # 출력 코딩
-    print('--------------------')
-    print('name  mid  final  grade ')
-    print('--------------------')
-    for i in range(len(students_info[0])):
-        print(students_info[0][i], students_info[1][i],
-              students_info[2][i], students_info[3][i])
+    print('--------------------------')
+    print("%-s %4s %4s %4s" % ('name', 'mid', 'final', 'grade'))
+    print('--------------------------')
+    for i in range(len(print_students[0])):
+        print("%s %4s %4s %4s" % (
+            print_students[0][i], print_students[1][i], print_students[2][i], print_students[3][i]))
 
 # menu 4
 
 
-def Menu4(delete_name, students_info):
+def Menu4(delete_name):
     # 학생 정보 삭제하는 코딩
-    a = students_info.index(delete_name)
-    for i in range(4):
-        del students_info[i][a]
+    k = students_info[0].index(delete_name)
+    if len(students_info[3]) == len(students_info[0]):
+        for i in range(0, 4):
+            del students_info[i][k]
+
+    else:
+        if len(students_info[0][k]) == 3:
+            for i in range(0, 3):
+                del students_info[i][k]
+        else:
+            for i in range(0, 4):
+                del students_info[i][k]
 
 
 # 학생 정보를 저장할 변수 초기화
@@ -62,16 +71,23 @@ while True:
     choice = input("Choose menu 1, 2, 3, 4, 5 : ")
     if choice == "1":
         # 학생 정보 입력받기
-        info_student = input('Enter name mid-score final-score')
-        name = info_student.split(' ')[0]
-        mid_score = info_student.split(' ')[1]
-        final_score = info_student.split(' ')[2]
+        info_student = input('Enter name mid-score final-score : ')
+        try:
+            name = info_student.split(' ')[0]
+            mid_score = int(info_student.split(' ')[1])
+            final_score = int(info_student.split(' ')[2])
+            if name in students_info[0]:
+                print("Already exist name!")
+            if name not in students_info[0]:
+                if mid_score > 0 and final_score > 0:
+                    Menu1(name, mid_score, final_score)
+        except IndexError:
+            print("Num of data is not 3!")
+        except ValueError:
+            print("Score is not positive integer!")
+
         # 예외사항 처리(데이터 입력 갯수, 이미 존재하는 이름, 입력 점수 값이 양의 정수인지)
-        if float(mid_score) % 1 != 0 and float(final_score) % 1 != 0:
-            print("Wrong number. Choose again")
         # 예외사항이 아닌 입력인 경우 1번 함수 호출
-        else:
-            Menu1(name, mid_score, final_score)
 
     elif choice == "2":
         # 예외사항 처리(저장된 학생 정보의 유무)
@@ -102,7 +118,7 @@ while True:
         # 입력 받은 학생의 존재 유무 체크 후, 없으면 "Not exist name!" 출력
         # 있으면(예를 들어 kim 이라 하면), 4번 함수 호출 후에 "kim student information is deleted." 출력
             if delete_name in students_info[0]:
-                Menu4(delete_name, students_info)
+                Menu4(delete_name)
                 print(f'{delete_name} student information is deleted.')
             else:
                 print('Not exist name!')

@@ -13,6 +13,7 @@ while (num < 32):
     for i in range(player_num):
         num += 1
         if num > 31:
+            print('playerB win!')
             break
         print(f'PlayerA : {num}')
         Player_A = num
@@ -28,6 +29,7 @@ while (num < 32):
     for i in range(player_num):
         num += 1
         if num > 31:
+            print('playerA win!')
             break
         print(f'PlayerB : {num}')
         Player_B = num

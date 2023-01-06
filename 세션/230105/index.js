@@ -104,3 +104,14 @@ const curMonth = () => {
     date = new Date();
     makeCalendar();
 }
+
+const firstDateIndex = dates.indexOf(1);
+const lastDateIndex = dates.indexOf(thisDate);
+
+dates.forach((date, i) => {
+    const condition = i >= firstDateIndex && i < lastDateIndex + 1
+        ? 'this'
+        : 'other';
+    dates[i] = `<div class="date"><span class="${condition}">${date}</span></div>`;
+
+})

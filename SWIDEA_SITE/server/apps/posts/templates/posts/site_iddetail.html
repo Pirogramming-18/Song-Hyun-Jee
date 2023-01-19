@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아이디어 디테일</title>
+    <!-- <link rel = "stylesheet" href="{% static 'css/retrieve.css'%}"> -->
+  </head>
+  <body>
+    <h1>Idea Detail</h1>
+    <span>아이디어 세부내용 페이지입니다. 당신이 구현하려한 아이디어들을 자세히 살펴보세요.</span>
+    <h1>{{post.title}}</h1>
+    <small>1 아이디어관심도:{{post.interest}}</small><br />
+    <small>2 예상개발툴</small>:{{post.devtools}}</small><br />
+    <p>3 아이디어 설명:{{post.content}}</p>
+    
+    <hr />
+    
+    <form action="{% url 'posts:delete' posts.pk%}" method="post">
+      {% csrf_token %}
+      <input type="submit" , value="삭제" />
+    </form>
+    <div>
+      <a href="{% url 'posts:main' %}">목록</a>
+    </div>
+    <div>
+      <a href="{% url 'posts:idupdate' post.pk%}">수정</a>
+    </div>
+  </body>
+</html>
